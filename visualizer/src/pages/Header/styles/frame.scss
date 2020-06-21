@@ -1,0 +1,103 @@
+@import '../../../colors.scss';
+.headerContainer{
+    width:100%;
+    height:80px;
+    background: $primary_black;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    h1{
+        font-family: $abel_font;
+        margin-left: 15px;
+        letter-spacing: 0.1rem;
+        font-size: 35px;
+        color: $vlite_white;
+        .left{
+            color: $primary_green;
+        }
+        @media screen and (max-width:500px) {
+            font-size: 22px;
+            margin-left: 6px;
+            letter-spacing: 0.05rem;
+        }
+    }
+    .headerIcons{
+        height:100%;
+        display: flex;
+        align-items: center;
+        .icons{
+            font-size: 28px;
+            color: $vvlite_white;
+            margin-right: 20px;
+            cursor: pointer;
+            @media screen and (max-width:500px){
+                font-size: 17px;
+                margin-right: 10px;
+            }
+            @media screen and (min-width:1150px){
+                &:hover{
+                    color: $primary_white;
+                }
+            }
+        }
+    }
+    .headerDropdown{
+      display: flex;
+      height:100%;
+      align-items: center;
+      padding:0 10px ;
+      cursor: pointer;
+      position: relative;
+      h2{
+          font-family: $abel_font;
+          font-size: 23px;
+          letter-spacing: 0.07rem;
+          color: $vlite_white;
+          @media screen and (max-width:500px){
+              font-size: 15px;
+          }
+      }
+      .downArrow{
+          color: $vlite_white;
+          margin-left: 2px;
+          @media screen and (max-width:500px){
+            font-size: 12px;
+        }
+      }
+      .content{
+          position:absolute;
+          top:100%;
+          width:90%;
+          height:150px;
+          margin:0;
+          background: $vvlite_white;
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          h7{
+              font-family: $abel_font;
+              font-size: 19px;
+              letter-spacing: 0.06rem;
+              font-weight: bold;
+              color: $primary_black;
+              margin:7px 0;
+              &:hover{
+                  color: $fav_red;
+              }
+          }
+      }
+      &:hover{
+          //background: $primary_grey;
+          h2{
+              color: $primary_white;
+          }
+          .downArrow{
+              color: $primary_white;
+          }
+          .content{
+              display: flex;
+          }
+      }
+    }
+}
