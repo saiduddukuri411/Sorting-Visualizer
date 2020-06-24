@@ -8,9 +8,9 @@ const types = ["Bubble", "Merge", "Quick", "Insertion"];
 const Headerframe = React.memo(
   ({ sortType, setType, setter, colors, arrays, arraySetter, colorSetter }) => {
     const [icon, setIcon] = React.useState(true);
-    console.log('icon',icon)
+    console.log("icon", icon);
     const run = () => {
-      setIcon(prev=>false)
+      setIcon((prev) => false);
       algo(
         colorSetter,
         colors,
@@ -26,11 +26,11 @@ const Headerframe = React.memo(
 
     const reloader = () => {
       timer.map((time) => {
-        clearTimeout(time); 
+        clearTimeout(time);
       });
       setter();
     };
-    console.log("header");
+    console.log("header",count);
     return (
       <header className="headerContainer">
         <h1>
@@ -38,12 +38,19 @@ const Headerframe = React.memo(
         </h1>
         <div className="headerIcons">
           {icon ? <FaPlay className="icons" onClick={run} /> : null}
-          {icon?<AiOutlineReload className="icons" onClick={reloader} />:null}
+          {icon ? (
+            <AiOutlineReload className="icons" onClick={reloader} />
+          ) : null}
         </div>
         <div
           className="headerDropdown"
           onClick={() => {
-            setCount((prev) => prev + 1);
+            if((count-1)%3===0){
+              setCount((prev) => 0);
+            }else{
+              setCount((prev) => prev + 1);
+            }
+            
           }}
         >
           <h2>{`${sortType} Sort`}</h2>

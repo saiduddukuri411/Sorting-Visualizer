@@ -11,7 +11,7 @@ const App = () => {
       setColors((prev) => [...colors]);
     };
     const min = 15;
-    const max = 500;
+    const max = 430;
     const list = [];
     const colors = [];
     for (let i = 0; i < 50; i++) {
@@ -27,7 +27,7 @@ const App = () => {
       setColors((prev) => [...colors]);
     };
     const min = 15;
-    const max = 500;
+    const max = 430;
     const list = [];
     const colors = [];
     for (let i = 0; i < 50; i++) {
